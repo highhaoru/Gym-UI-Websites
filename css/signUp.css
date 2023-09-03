@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color:#333;
+    /* animation-name: change;
+    animation-duration:2s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite; */
+}
+/* 
+@keyframes change{
+    0%   {background-color: #ffffff;}
+  25%  {background-color: #aaa;}
+  50%  {background-color: gray;}
+  75%  {background-color:#333}
+  100% {background-color: #222222;}
+} */
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald' , sans-serif;
+}
+
+/* starts header */
+#wrapper #header{
+    position:fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding:15px 15px;
+    background-color:#222222;
+}
+
+#header .container{
+	-webkit-display: flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#wrapper #header .container .logo .LogoText,#wrapper #header .container .logo .LogoImg{
+    display: inline-block;
+}
+
+#wrapper #header .container .logo .LogoImg a img{
+    width:30px;
+    height:30px;
+}
+
+#wrapper #header .container .logo .LogoText a{
+    font-size: 30px;
+    font-weight:bold;
+    text-decoration: none;
+    margin: auto;
+    color: #ffffff;
+}
+
+#wrapper #header .container .logo .LogoText a span{
+    color:#c11325;
+}
+
+.container1 {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index:100;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: transform .5s ease;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-8px, 8px);
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.Account{
+    cursor: pointer;
+    position: absolute;
+    z-index:100;
+    right:15%;
+}
+
+.Account a{
+    font-size: 30px;
+    text-decoration: none;
+    margin: auto;
+    color: #ffffff;
+    font-weight:bold;
+        z-index:100;
+}
+
+.Account a:hover{
+    color:#c11325;
+}
+
+/* side bar menu starts */
+#wrapper #header .nav{
+    position:fixed;
+    background-color: #c11325;
+    width: 350px;
+    top: 0;
+    right: 0;
+    height: 100%;
+    z-index:99;
+    padding: 100px 0px 15px;
+    -webkit-transform:translate(100%);
+    transform:translate(100%);
+    -webkit-transition: transform .5s ease;
+    transition: transform .5s ease;
+}
+
+#wrapper #header .nav.open{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+#wrapper #header .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+#wrapper #header .nav ul li{
+    display: block;
+}
+
+
+#wrapper #header .nav ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    position: relative;
+    padding: 20px 30px;
+    /* text-align: center; */
+    float:left;
+    width:100%;
+    padding-left: 0px;
+}
+
+#wrapper #header .nav ul li a.active::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+	opacity:.2;
+	-webkit-transition: width .5s ease;
+	transition: width .5s ease;
+	z-index: -1;
+}
+
+#wrapper #header .nav ul li a::before{
+    content: '';
+	position: absolute;
+	left:0px;
+	top:0px;
+	height: 100%;
+	width:0px;
+	background-color:#000000;
+	opacity:.2;
+	-webkit-transition: width .5s ease;
+	transition: width .5s ease;
+	z-index: -1;
+}
+
+#wrapper #header .nav ul li a:hover::before{
+	width: 100%;
+}
+
+
+#wrapper #header .nav ul li a i{
+    color:#000000;
+    width:50px;
+    height:25px;
+    padding-right:10px;
+    padding-left:15px;
+    margin-left:0;
+}
+
+#wrapper #header .nav #cal {
+  padding-left: 20px;
+}
+
+#wrapper #header .nav #info {
+  padding-left: 25px;
+}
+
+#wrapper #header .nav #log {
+  padding-left: 20px;
+}
+
+#wrapper #header .nav ul li a i,#wrapper #header .nav ul li a{
+    display:inline-block;
+    align-self: center;
+}
+
+#wrapper #header .nav .accordion {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 30px;
+  transition: 0.4s;
+  display:inline-block;
+  position:relative;
+
+}
+
+#wrapper #header .nav .accordion a{
+    width:85%;
+}
+
+#wrapper #header .nav .accordion:after {
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  padding-top:15px; 
+  margin-left: 0px;
+  display:inline-block;
+}
+
+#wrapper #header .nav .opened:after {
+  content: "\2212";
+}
+
+#wrapper #header .nav .panel {
+  padding: 0 18px;
+  background-color: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display:block;
+  position:relative;
+  left: -20px;
+}
+/* side menu bar ends */
+
+#wrapper #header .container{
+   max-width: 1170px;
+	margin: auto;
+}
+
+#wrapper #header .container{
+   max-width: 1170px;
+	margin: auto;
+}
+/* ends header */
+
+/* starts form */
+
+#wrapper .main #left{
+    float: left;
+    /* border: 1px solid; */
+    width:20%;
+}
+
+#wrapper .main #right{
+float: right;
+/* border: 1px solid; */
+width: 80%;
+height:100%;
+margin:auto;
+margin-right: 10%;
+}
+
+#wrapper .main #right,#wrapper #main #left{
+    display: inline-block;
+}
+
+#wrapper .main #left .im{
+    background-image: url(../images/pink.jpg);
+    position:absolute;
+    margin-top: 21.5%;
+    margin-left: 10%;
+    width: 30%;
+    height: 100%;
+    background-size:cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    display: block;
+    top: 0;
+    left: 0;
+}
+/* 如何让DIV可以100%显示Height的100%必须要结合绝对定位
+    position: absolute;
+    height: 100%; */
+
+@media (max-width:480px){
+    #wrapper .main #left{
+    display: none;
+    }
+}
+
+#wrapper #right .reg .line2{
+    margin-top:100px;
+    font-size: 50px;
+    font-weight:bold;
+    color:#c11325;
+}
+
+#wrapper #right .line3{
+    font-size: 30px;
+    font-weight: bold;
+    color:#ffffff;
+    margin-top:10px;
+    /* animation-name: change1;
+    animation-duration:2s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite; */
+}
+/* 
+@keyframes change1{
+  0%   {color: #222222;}
+  25%  {color: #333;}
+  50%  {color: gray;}
+  75%  {color:#aaa}
+  100% {color: #ffffff;}
+} */
+
+
+#wrapper #right .line3 a{
+    text-decoration:none;
+    color: royalblue;
+
+}
+
+#wrapper #right .reg{
+    width:600px;
+    margin:250px;
+    margin-left:600px;
+    /* border:1px solid; */
+}
+
+#wrapper #right .reg input{
+    width:80%;
+    height:70px;
+    margin-top: 40px;
+    /* margin-bottom:30px; */
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border:1px solid #aaa;
+}
+
+#wrapper #right .reg .line6 select{
+    width:80px;
+    height:70px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border:1px solid #aaa;
+}
+
+#wrapper #right .reg .line6 input{
+    width:66%;
+}
+
+#wrapper #right .reg .line6{
+    color:#aaa;
+}
+
+#wrapper #right .reg .line8{
+    color:#ffffff;
+    /* animation-name: change2;
+    animation-duration:2s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite; */
+}
+
+/* @keyframes change2{
+  0%   {color: #222222;}
+  25%  {color: #333;}
+  50%  {color: gray;}
+  75%  {color:#aaa}
+  100% {color: #ffffff;}
+} */
+
+#wrapper #right .reg input[type='button']{
+    background-color:red;
+    color:white;
+    font-size: 20px;
+    width:80%;
+    height:70px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor:pointer;  /*css鼠标变手势*/
+}
+
+#wrapper #right .reg input[type='button']:hover{
+    background-color: #c11325;
+}
+
+#wrapper #right .reg input[type='checkbox']{
+    width:20px;
+    margin:0;
+    height:auto;
+}
+/* ends form */
+
+/* start footer */
+#wrapper #footer{
+    position:fixed;
+    width:100%;
+    height:auto;
+    color:#c11325;
+    font-size:20px;
+    bottom:0;
+    text-align:center;
+    background-color:#222222;
+}
+/* ends footer */
