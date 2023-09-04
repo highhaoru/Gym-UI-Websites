@@ -4,7 +4,7 @@
 Hao Jin
 
 ## Description
-This is a UI design I created for a gym at.
+This is a UI design I created for a gym at https://haojin-fitness.netlify.app/.
 
 ## Features
 
@@ -32,8 +32,3 @@ This is a UI design I created for a gym at.
 
 1. Clone the repository
 2. Open `index.html` in your web browser
-
-## License
-
-This project is licensed under the MIT License.
-
